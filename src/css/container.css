@@ -3,7 +3,7 @@
   min-width: 320px;
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 16px;
+  /* padding: 0 16px; */
 }
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
@@ -16,4 +16,8 @@
   .container {
     max-width: 1200px;
   }
+}
+.form {
+  padding: 20px;
+  text-align: center;
 }
