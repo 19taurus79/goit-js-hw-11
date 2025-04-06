@@ -2,14 +2,22 @@
 import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
+// import { loader } from '../main';
+const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
 export function createGallery(images) {
   //   console.log('createGallery', images);
-  const gallery = document.querySelector('.gallery');
+  
   const markup = images
-    .map(({ webformatURL, largeImageURL, tags }) => {
+    .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
       return `<li class="gallery-item"><a href="${webformatURL}">
             <img class="gallery-image" src="${largeImageURL}" alt="${tags}" />
+            <div class='item-footer'>
+            <p><b>likes</b> ${likes}</p>
+            <p><b>views</b> ${views}</p>
+            <p><b>comments</b> ${comments}</p>
+            <p><b>downloads</b> ${downloads}</p>
+            </div>
         </a>
        
         </li>`;
@@ -19,13 +27,18 @@ export function createGallery(images) {
   lightbox.refresh();
 }
 export function clearGallery() {
-  const gallery = document.querySelector('.gallery');
   gallery.innerHTML = '';
+  
 }
-// export function renderMarkup() {
-//     const container = document.querySelector('.gallery');
-//     const markup = createGallery(images);
-//   container.insertAdjacentHTML('beforeend', markup);
-// }
+
+
+export function showLoader() {
+  loader.classList.remove('hidden-loader');
+  
+}
+
+export function hideLoader() {
+  loader.classList.add('hidden-loader');
+}
 
 const lightbox = new SimpleLightbox('.gallery a', {});
