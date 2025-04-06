@@ -9,7 +9,7 @@
 }
 .gallery-item {
   position: relative;
-  width: calc((100% / 2) - 20px);
+  /* width: calc((100% / 2) - 20px); */
   overflow: hidden;
   border: solid 1px black;
 }
@@ -26,14 +26,14 @@
   height: 48px;
   background-color: white; /* Белая заливка */
 }
-/* Планшеты: 4 столбца */
+/* Планшеты: 2 столбца */
 @media (min-width: 768px) {
   .gallery-item {
-    width: calc((100% / 3) - 20px);
+    width: calc((100% / 2) - 20px);
   }
 }
 
-/* Десктопы: 6 столбцов */
+/* Десктопы: 3 столбца */
 @media (min-width: 1200px) {
   .gallery-item {
     width: calc((100% / 3) - 20px);
