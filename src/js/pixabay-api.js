@@ -18,23 +18,13 @@ export function getImagesByQuery(query) {
   return axios
     .get(
       `${PIXABAY_API_URL}?key=${PIXABAY_API_KEY}&q=${query}&image_type=${PIXABAY_PARAMS.image_type}&orientation=${PIXABAY_PARAMS.orientation}&safesearch=${PIXABAY_PARAMS.safesearch}`
-  ).then(response => {
-    if (response.data.hits.length === 0) {
-      iziToast.error({
-        message: 'Sorry, there are no images matching your search query. Please try again!',
-        position: 'topCenter',
-        timeout: 3000
-      })
-    }
-    
-    return response.data;
-  })
+  ).then((response) => { return response.data; })
     .catch(error => {
       console.error('Error fetching data from Pixabay:', error);
     })
-  .finally(() => {
-    hideLoader();
-  });
+  // .finally(() => {
+  //   hideLoader();
+  // });
   
  
 }
