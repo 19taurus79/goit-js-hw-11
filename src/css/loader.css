@@ -5,7 +5,7 @@
     border: 5px solid;
     border-color: #FF3D00 transparent;
     border-radius: 50%;
-    /* display: inline-block; */
+    display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
 }
@@ -22,4 +22,8 @@
 .hidden-loader {
     display: none;
     
+}
+.loader-wraper {
+    display: flex;
+    justify-content: center;
 }
