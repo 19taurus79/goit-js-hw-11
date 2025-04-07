@@ -7,6 +7,7 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', event => {
   event.preventDefault();
   const query = form.elements['search-text'].value;
+  clearGallery();
   if (query === '') { 
     iziToast.error({
       message: 'Please enter a search query!',
